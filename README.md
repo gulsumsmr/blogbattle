@@ -258,32 +258,6 @@ cd frontend
 npm run build
 ```
 
-## 🚨 Sorun Giderme
-
-### Yaygın Sorunlar
-
-1. **MongoDB Bağlantı Hatası**
-   - MongoDB'nin çalıştığından emin olun
-   - Backend/.env'deki MONGO_URI'yi kontrol edin
-
-2. **CORS Hataları**
-   - Backend/.env'deki CLIENT_ORIGIN'in frontend URL'i ile eşleştiğini doğrulayın
-   - İsteklerde credentials'ların dahil edildiğini kontrol edin
-
-3. **Socket.IO Bağlantı Sorunları**
-   - Backend'in doğru portta çalıştığından emin olun
-   - Frontend/.env'deki VITE_API_BASE'i kontrol edin
-
-4. **Kimlik Doğrulama Sorunları**
-   - Tarayıcı çerezlerini temizleyin
-   - Backend/.env'deki JWT_SECRET'i kontrol edin
-   - httpOnly çerezlerin etkin olduğundan emin olun
-
-### Loglar
-- Backend logları terminalde görüntülenir
-- Frontend logları tarayıcı konsolunda mevcuttur
-- Socket.IO olayları debug için loglanır
-
 ## 📋 Kurulum Kontrol Listesi
 
 - [ ] Node.js yüklendi (v16+)
@@ -307,25 +281,5 @@ npm run build
 5. **Gerçek Zamanlı**: Oy yüzdelerinin canlı güncellendiğini görün
 6. **Admin Panel**: Admin olarak giriş yapın ve eşleşme yönetin
 
-## 📄 Lisans
 
-Bu proje açık kaynak kodludur ve MIT Lisansı altında mevcuttur.
 
-## 🤝 Katkıda Bulunma
-
-1. Projeyi fork edin
-2. Feature branch oluşturun (`git checkout -b feature/AmazingFeature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'Add some AmazingFeature'`)
-4. Branch'inizi push edin (`git push origin feature/AmazingFeature`)
-5. Pull Request oluşturun
-
-## 📞 Destek
-
-Herhangi bir sorun yaşarsanız:
-- GitHub Issues açın
-- Detaylı hata mesajları ekleyin
-- Hangi adımda sorun yaşadığınızı belirtin
-
----
-
-**Blog Battle ile eğlenceli turnuvalar düzenleyin!** 🏆⚔️

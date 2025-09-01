@@ -2,7 +2,7 @@
 
 Blog yazılarını turnuva tarzında eşleştirip gerçek zamanlı oylama yapabileceğiniz bir platform.
 
-## 🚀 Özellikler
+## Özellikler
 
 - **Kimlik Doğrulama**: JWT cookie tabanlı kayıt, giriş ve çıkış
 - **Blog Yazıları**: Kategori ve resimlerle blog yazıları oluşturma
@@ -12,7 +12,7 @@ Blog yazılarını turnuva tarzında eşleştirip gerçek zamanlı oylama yapabi
 - **Sonuçlar**: Tamamlanan eşleşmeleri ve kazananları görme
 - **Admin Paneli**: Manuel eşleşme oluşturma ve oy yönetimi
 
-## 🛠️ Teknoloji Stack'i
+## Teknoloji Stack'i
 
 ### Backend
 - **Node.js** + Express
@@ -28,65 +28,7 @@ Blog yazılarını turnuva tarzında eşleştirip gerçek zamanlı oylama yapabi
 - **Socket.IO Client** gerçek zamanlı güncellemeler için
 - **React Router** navigasyon için
 
-## 📁 Proje Yapısı
-
-```
-blogbattle/
-├── backend/
-│   ├── src/
-│   │   ├── server.js          # Ana sunucu dosyası
-│   │   ├── db.js             # Veritabanı bağlantısı
-│   │   ├── config.js         # Ortam konfigürasyonu
-│   │   ├── middleware/
-│   │   │   ├── auth.js       # JWT kimlik doğrulama
-│   │   │   └── admin.js      # Admin yetki kontrolü
-│   │   ├── models/
-│   │   │   ├── User.js       # Kullanıcı modeli
-│   │   │   ├── Post.js       # Yazı modeli
-│   │   │   ├── Match.js      # Eşleşme modeli
-│   │   │   └── Vote.js       # Oy modeli
-│   │   ├── routes/
-│   │   │   ├── auth.routes.js    # Kimlik doğrulama rotaları
-│   │   │   ├── post.routes.js    # Yazı rotaları
-│   │   │   └── match.routes.js   # Eşleşme rotaları
-│   │   └── utils/
-│   │       ├── bracket.js        # Turnuva yönetimi
-│   │       └── pickNextMatch.js  # Eşleşme seçimi
-│   ├── package.json
-│   └── .env
-├── frontend/
-│   ├── src/
-│   │   ├── app/
-│   │   │   ├── store.js      # Redux store
-│   │   │   └── api.js        # API konfigürasyonu
-│   │   ├── features/
-│   │   │   ├── auth/
-│   │   │   │   └── authSlice.js
-│   │   │   ├── posts/
-│   │   │   │   └── postsApi.js
-│   │   │   └── match/
-│   │   │       └── matchApi.js
-│   │   ├── components/
-│   │   │   ├── Navbar.jsx
-│   │   │   ├── VotePair.jsx
-│   │   │   └── WinnerBadge.jsx
-│   │   ├── pages/
-│   │   │   ├── Home.jsx
-│   │   │   ├── Login.jsx
-│   │   │   ├── Register.jsx
-│   │   │   ├── NewPost.jsx
-│   │   │   ├── Vote.jsx
-│   │   │   ├── Results.jsx
-│   │   │   └── AdminPanel.jsx
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── index.css
-│   ├── package.json
-│   └── .env
-└── README.md
-```
-
-## 🚀 Kurulum Talimatları
+## Kurulum Talimatları
 
 ### Gereksinimler
 - **Node.js** (v16 veya üzeri)
@@ -139,24 +81,7 @@ VITE_API_BASE=http://localhost:4000
 
 ### 3. MongoDB'yi Başlatın
 
-MongoDB'nin sisteminizde çalıştığından emin olun:
-
-#### Windows için:
-```bash
-# MongoDB servisini başlatın
-net start MongoDB
-
-# Veya MongoDB Compass kullanın
-```
-
-#### macOS/Linux için:
-```bash
-# MongoDB'yi başlatın
-mongod
-
-# Veya servis olarak
-sudo systemctl start mongod
-```
+MongoDB'nin sisteminizde çalıştığından emin olun.
 
 ### 4. Uygulamayı Çalıştırın
 
@@ -176,46 +101,7 @@ Uygulama şu adreslerde erişilebilir olacak:
 - **Frontend**: http://localhost:5173
 - **Backend API**: http://localhost:4000
 
-## 📡 API Endpoint'leri
-
-### Kimlik Doğrulama
-- `POST /api/auth/register` - Yeni kullanıcı kaydı
-- `POST /api/auth/login` - Kullanıcı girişi
-- `GET /api/auth/me` - Mevcut kullanıcı bilgisi
-- `POST /api/auth/logout` - Kullanıcı çıkışı
-
-### Yazılar
-- `POST /api/posts` - Yeni yazı oluştur
-- `GET /api/posts` - Tüm yazıları getir
-- `GET /api/posts/:id` - ID'ye göre yazı getir
-- `DELETE /api/posts/:id` - Yazıyı sil
-
-### Eşleşmeler
-- `POST /api/matches/seed` - 4 yazıdan yarı final oluştur
-- `GET /api/matches/next` - Sonraki mevcut eşleşmeyi getir
-- `POST /api/matches/:id/vote` - Eşleşmede oy ver
-- `GET /api/matches/active/:bracketId` - Aktif eşleşmeleri getir
-- `GET /api/matches/completed/:bracketId` - Tamamlanan eşleşmeleri getir
-
-### Admin Endpoint'leri
-- `POST /api/matches/admin/create` - Manuel eşleşme oluştur
-- `GET /api/matches/admin/brackets` - Tüm turnuvaları getir
-- `POST /api/matches/admin/reset-votes/:matchId` - Eşleşme oylarını sıfırla
-- `DELETE /api/matches/admin/match/:matchId` - Eşleşmeyi sil
-
-## 🔌 Socket.IO Olayları
-
-### İstemci → Sunucu
-- `join-user` - Kullanıcı odasına katıl
-- `join-bracket` - Turnuva odasına katıl
-
-### Sunucu → İstemci
-- `match:update` - Gerçek zamanlı oy güncellemeleri
-- `match:closed` - Eşleşme kapanış bildirimi
-- `final:created` - Final eşleşmesi oluşturuldu bildirimi
-- `bracket:created` - Yeni turnuva oluşturuldu bildirimi
-
-## 📱 Kullanım Akışı
+## Kullanım Akışı
 
 1. **Kayıt/Giriş**: Hesap oluşturun veya giriş yapın
 2. **Yazı Oluştur**: Başlık, içerik, kategori ve resimlerle blog yazıları ekleyin
@@ -224,7 +110,7 @@ Uygulama şu adreslerde erişilebilir olacak:
 5. **Gerçek Zamanlı Güncellemeler**: Canlı oy yüzdelerini ve eşleşme kapanışlarını görün
 6. **Sonuçları Gör**: Sonuçlar sayfasında tamamlanan eşleşmeleri ve kazananları kontrol edin
 
-## 🔑 Temel Özellikler
+## Temel Özellikler
 
 - **Kullanıcı Başına Tek Oy**: Kullanıcılar her eşleşmede sadece bir kez oy verebilir
 - **Oy Limiti**: Eşleşmeler oy limitine ulaştığında otomatik olarak kapanır (varsayılan: 10)
@@ -233,32 +119,8 @@ Uygulama şu adreslerde erişilebilir olacak:
 - **Responsive Tasarım**: Masaüstü ve mobil cihazlarda çalışır
 - **Admin Paneli**: Manuel eşleşme oluşturma ve oy yönetimi
 
-## 🛠️ Geliştirme
 
-### Backend Geliştirme
-```bash
-cd backend
-npm run dev  # nodemon ile otomatik yeniden başlatma
-```
-
-### Frontend Geliştirme
-```bash
-cd frontend
-npm run dev  # Vite dev server ile hot reload
-```
-
-### Production Build
-```bash
-# Backend
-cd backend
-npm start
-
-# Frontend
-cd frontend
-npm run build
-```
-
-## 📋 Kurulum Kontrol Listesi
+##  Kurulum Kontrol Listesi
 
 - [ ] Node.js yüklendi (v16+)
 - [ ] MongoDB çalışıyor
@@ -272,26 +134,23 @@ npm run build
 - [ ] http://localhost:5173 açılıyor
 - [ ] http://localhost:4000 API erişilebilir
 
-## 🎯 Test Senaryoları
+## Proje Görselleri
+<img width="1912" height="909" alt="image" src="https://github.com/user-attachments/assets/f1b3909a-c248-43e9-9a99-56c03fa3ee64" />
+<img width="1915" height="898" alt="image" src="https://github.com/user-attachments/assets/01f0884f-f55f-4092-8302-56298c25e4f8" />
+<img width="1907" height="893" alt="image" src="https://github.com/user-attachments/assets/82459ce9-9e7d-458b-b2e2-a5a9972fcdac" />
+<img width="1912" height="903" alt="image" src="https://github.com/user-attachments/assets/ac04cea8-d003-4e2d-b229-f38d61143f1d" />
+<img width="1912" height="901" alt="image" src="https://github.com/user-attachments/assets/580238b9-dbb1-4209-b353-db954f5f8d84" />
+<img width="1905" height="880" alt="image" src="https://github.com/user-attachments/assets/14751d38-4ec5-49ea-a0cf-625a8f478b62" />
+<img width="1919" height="897" alt="image" src="https://github.com/user-attachments/assets/28b73b87-addc-4d88-895a-c1401b150ea5" />
+<img width="1915" height="907" alt="image" src="https://github.com/user-attachments/assets/4f802e6a-57a9-458b-a083-9ff41c84ba5f" />
+<img width="1906" height="895" alt="image" src="https://github.com/user-attachments/assets/b4fc0ad9-8dd7-4c41-b7ec-7477ecbef408" />
 
-1. **Kullanıcı Kaydı**: Yeni hesap oluşturun
-2. **Blog Yazısı**: Kategori ve resimle yazı ekleyin
-3. **Turnuva Oluştur**: 4 yazıdan turnuva başlatın
-4. **Oylama**: Aktif eşleşmede oy verin
-5. **Gerçek Zamanlı**: Oy yüzdelerinin canlı güncellendiğini görün
-6. **Admin Panel**: Admin olarak giriş yapın ve eşleşme yönetin
 
 
 
-<<<<<<< HEAD
-## 🤝 Katkıda Bulunma
 
-1. Projeyi fork edin
-2. Feature branch oluşturun (`git checkout -b feature/AmazingFeature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'Add some AmazingFeature'`)
-4. Branch'inizi push edin (`git push origin feature/AmazingFeature`)
-5. Pull Request oluşturun
 
-**Blog Battle ile eğlenceli turnuvalar düzenleyin!** 🏆⚔️
-=======
->>>>>>> a4b2423b4d69758a5acd5de595702ec706068734
+
+
+
+

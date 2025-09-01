@@ -319,13 +319,4 @@ Bu proje açık kaynak kodludur ve MIT Lisansı altında mevcuttur.
 4. Branch'inizi push edin (`git push origin feature/AmazingFeature`)
 5. Pull Request oluşturun
 
-## 📞 Destek
-
-Herhangi bir sorun yaşarsanız:
-- GitHub Issues açın
-- Detaylı hata mesajları ekleyin
-- Hangi adımda sorun yaşadığınızı belirtin
-
----
-
 **Blog Battle ile eğlenceli turnuvalar düzenleyin!** 🏆⚔️

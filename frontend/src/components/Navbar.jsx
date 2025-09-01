@@ -37,7 +37,7 @@ function Navbar() {
                   Yeni Yazı
                 </Link>
                 <Link to="/admin" className="text-slate-400 hover:text-accent-secondary transition-colors duration-300 font-medium">
-                  Admin
+                  Manuel Eşleşme
                 </Link>
                 <div className="flex items-center space-x-4">
                   <span className="text-slate-400 hidden sm:inline font-medium">Merhaba, <span className="text-accent">{user?.username}</span></span>
